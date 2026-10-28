@@ -1,13 +1,913 @@
-<!DOCTYPE html><html lang="sw"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agano la Kale</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><div class="logo">📖 APPRENDRE <span>LA BIBLE</span></div><nav><a href="index.html">Nyumbani</a><a href="agano-la-kale.html">Agano la Kale</a><a href="agano-jipya.html">Agano Jipya</a><a href="mifano-ya-imani.html">Mifano</a><a href="maonyo-biblia.html">Maonyo</a><a href="maisha-ya-yesu.html">Yesu</a><a href="maisha-ya-leo.html">Leo</a><a href="nitafute.html">Nitafute</a></nav></header>
-<section class="hero"><div><h1>AGANO LA KALE - <b>Hekima ya Kale</b></h1><p>Vitabu 39, 8 masomo na picha.</p></div></section>
-<section class="section"><div class="grid">
-<div class="lesson"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600"><div class="lesson-content"><small>SOMO 1 MWANZO 1-2</small><h3>Uumbaji na Sabato</h3><p>Mungu aliumba siku 6 akapumzika siku ya 7 Sabato. Sabato kabla ya Israeli.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600"><div class="lesson-content"><small>SOMO 2 MWANZO 3</small><h3>Kuanguka</h3><p>Hawa alidanganywa. Dhambi = kutotii. Matokeo kifo.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600"><div class="lesson-content"><small>SOMO 3 NOA</small><h3>Noa - Utiifu</h3><p>Mwanzo 6-9 alijenga Safina miaka 120. Mungu anatafuta waaminifu.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"><div class="lesson-content"><small>SOMO 4 IBRAHIMU</small><h3>Imani ya Ibrahimu</h3><p>Mwanzo 12-22 alitoka bila kujua, alitoa Isaka. Warumi 4:3.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600"><div class="lesson-content"><small>SOMO 5 YUSUFU</small><h3>Yusufu - Kusamehe</h3><p>Mwanzo 37-50 aliuza, alisingiziwa, Mungu alimwinua Waziri.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600"><div class="lesson-content"><small>SOMO 6 MUSA</small><h3>Amri Kumi</h3><p>Kutoka 20 Amri ya 4 Kumbuka Sabato. Msingi SDA.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600"><div class="lesson-content"><small>SOMO 7 DAUDI</small><h3>Daudi na Goliati</h3><p>1 Sam 17 Daudi alimshinda Goliati kwa Mungu.</p></div></div>
-<div class="lesson"><img src="https://images.unsplash.com/photo-1520637102912-2df6bb2aec6d?w=600"><div class="lesson-content"><small>SOMO 8 AYUBU</small><h3>Ayubu - Uvumilivu</h3><p>Alipoteza kila kitu lakini hakumkana Mungu. Alirudishiwa mara mbili.</p></div></div>
-</div></section></body></html>
+
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Jifunze masomo ya Agano la Kale kwa Kiswahili, kuanzia uumbaji hadi manabii.">
+
+    <title>Agano la Kale | APPRENDRE LA BIBLE</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- CSS ya tovuti -->
+    <link rel="stylesheet" href="Styles.css">
+
+    <style>
+        .page-banner {
+            background: linear-gradient(135deg, #153b35, #245b4e);
+            color: white;
+            padding: 75px 0;
+        }
+
+        .page-banner h1 {
+            color: white;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+        }
+
+        .page-banner p {
+            max-width: 750px;
+            margin: 15px auto 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .lesson-detail {
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #e5e9e5;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+            height: 100%;
+        }
+
+        .lesson-detail h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-top: 18px;
+            margin-bottom: 14px;
+        }
+
+        .lesson-detail img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .lesson-detail .lesson-reference {
+            display: inline-block;
+            color: #245b4e;
+            background: #edf5ef;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 5px;
+            margin: 5px 0 12px;
+            font-size: 0.88rem;
+        }
+
+        .lesson-detail .lesson-label {
+            color: #8a6810;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .lesson-detail .lesson {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e9e5;
+        }
+
+        .lesson-detail .lesson strong {
+            color: #153b35;
+        }
+
+        .lesson-detail:hover {
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        .study-intro {
+            background: #f7f8f4;
+            border-left: 5px solid #f2c14e;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .contents-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 13px;
+            border: 1px solid #dce5dd;
+            border-radius: 20px;
+            color: #153b35;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .contents-link:hover {
+            background: #153b35;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-book-half text-warning"></i>
+                APPRENDRE LA BIBLE
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Fungua menyu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Mwanzo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="agano-la-kale.html">
+                            Agano la Kale
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="agano-jipya.html">
+                            Agano Jipya
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="mifano-ya-imani.html">
+                            Mifano ya Imani
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="maonyo-biblia.html">
+                            Maonyo ya Biblia
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="maisha-ya-yesu.html">
+                            Maisha ya Yesu
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="maisha-ya-leo.html">
+                            Maisha ya Leo
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="nitafute.html">
+                            Wasiliana Nami
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- UKURASA WA UTANGULIZI -->
+    <header class="page-banner text-center">
+        <div class="container">
+
+            <span class="badge bg-warning text-dark p-2">
+                SAFARI KUPITIA BIBLIA
+            </span>
+
+            <h1 class="mt-3">Agano la Kale</h1>
+
+            <p class="lead">
+                Jifunze jinsi Mungu alivyoumba ulimwengu, alivyowaongoza
+                watu wake, alivyotenda katika historia na jinsi tunavyoweza
+                kujifunza kutokana na maisha ya watu waliotajwa katika Biblia.
+            </p>
+
+            <a href="#masomo"
+                class="btn btn-warning btn-lg mt-4">
+                <i class="bi bi-book"></i>
+                Anza Masomo
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- UTANGULIZI -->
+    <section class="py-5">
+        <div class="container">
+
+            <div class="study-intro">
+                <h2 class="fw-bold">
+                    Agano la Kale linatufundisha nini?
+                </h2>
+
+                <p class="mb-2">
+                    Agano la Kale lina vitabu vinavyoeleza kuhusu uumbaji,
+                    mwanzo wa dhambi, agano la Mungu na watu wake, historia
+                    ya Israeli, sheria, mashairi, hekima na ujumbe wa manabii.
+                </p>
+
+                <p class="mb-0">
+                    Tunaposoma hadithi hizi, tunapaswa kuzingatia muktadha
+                    wake, kile kifungu kinasema na funzo tunaloweza kupata.
+                    Masomo haya yanakusaidia kuanza; soma pia vifungu
+                    kamili katika Biblia yako.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- VIUNGO VYA HARAKA -->
+    <section class="pb-4">
+        <div class="container text-center">
+
+            <h2 class="h4 fw-bold mb-3">Chagua somo</h2>
+
+            <a class="contents-link" href="#somo1">1. Uumbaji</a>
+            <a class="contents-link" href="#somo2">2. Adamu na Hawa</a>
+            <a class="contents-link" href="#somo3">3. Nuhu</a>
+            <a class="contents-link" href="#somo4">4. Ibrahimu</a>
+            <a class="contents-link" href="#somo5">5. Yusufu</a>
+            <a class="contents-link" href="#somo6">6. Musa</a>
+            <a class="contents-link" href="#somo7">7. Daudi</a>
+            <a class="contents-link" href="#somo8">8. Eliya</a>
+            <a class="contents-link" href="#somo9">9. Esta</a>
+            <a class="contents-link" href="#somo10">10. Danieli</a>
+
+        </div>
+    </section>
+
+
+    <!-- MASOMO -->
+    <section class="py-5" id="masomo">
+        <div class="container">
+
+            <div class="section-heading text-center mb-5">
+                <span class="section-label">MASOMO YA BIBLIA</span>
+
+                <h2 class="fw-bold mt-2">
+                    Masomo 10 ya Agano la Kale
+                </h2>
+
+                <p class="text-muted">
+                    Soma hadithi, tafakari ujumbe wake na uangalie
+                    jinsi unavyoweza kutumia funzo lake katika maisha.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- SOMO 1 -->
+                <div class="col-lg-6" id="somo1">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 01</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
+                            alt="Msitu na mazingira ya uumbaji">
+
+                        <h2>Uumbaji wa Ulimwengu</h2>
+
+                        <span class="lesson-reference">
+                            Mwanzo 1:1–31; Mwanzo 2:1–3
+                        </span>
+
+                        <p>
+                            Biblia inaanza kwa kueleza kwamba Mungu aliumba
+                            mbingu na nchi. Mwanzo 1 inaeleza hatua za uumbaji,
+                            na Mwanzo 2:1–3 inazungumzia siku ya saba ambayo
+                            Mungu aliitakasa na kuibariki.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Uumbaji unatukumbusha kuhusu Mungu kama
+                                Muumba na wajibu wa kutunza maisha na
+                                mazingira aliyoyaumba.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tunapaswa kuthamini maisha, kutunza mazingira
+                                na kutenga muda wa kupumzika na kumwabudu Mungu.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 2 -->
+                <div class="col-lg-6" id="somo2">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 02</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85"
+                            alt="Mwanga wa jua katika bustani">
+
+                        <h2>Adamu, Hawa na Mwanzo wa Dhambi</h2>
+
+                        <span class="lesson-reference">
+                            Mwanzo 2:15–25; Mwanzo 3:1–24
+                        </span>
+
+                        <p>
+                            Adamu na Hawa waliwekwa katika bustani ya Edeni.
+                            Mwanzo 3 inaeleza jinsi walivyokiuka maagizo ya
+                            Mungu na jinsi uhusiano wao na Mungu ulivyoathirika.
+                            Hadithi hii inaonyesha kuingia kwa dhambi katika
+                            simulizi la Biblia.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Maamuzi yetu yana matokeo, na tunahitaji
+                                kumtegemea Mungu badala ya kupuuza maagizo yake.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tujifunze kukubali makosa yetu, kutafuta
+                                msamaha na kuchagua yaliyo mema.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 3 -->
+                <div class="col-lg-6" id="somo3">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 03</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                            alt="Mandhari ya asili yenye anga kubwa">
+
+                        <h2>Nuhu na Safina</h2>
+
+                        <span class="lesson-reference">
+                            Mwanzo 6:9–22; Mwanzo 7–9
+                        </span>
+
+                        <p>
+                            Katika simulizi la Nuhu, dunia imeelezwa kuwa
+                            imejaa uovu. Mungu anamwagiza Nuhu kujenga safina.
+                            Baada ya gharika, Mwanzo 9 inaeleza agano la Mungu
+                            na Nuhu na ishara ya upinde wa mvua.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Simulizi hili linasisitiza utii, umuhimu
+                                wa kutenda yaliyo sawa na tumaini katika
+                                ahadi za Mungu.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuwe waaminifu hata tunapokabili hali ngumu,
+                                na tutimize wajibu wetu kwa bidii.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 4 -->
+                <div class="col-lg-6" id="somo4">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 04</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+                            alt="Njia katika mandhari ya asili">
+
+                        <h2>Ibrahimu na Ahadi ya Mungu</h2>
+
+                        <span class="lesson-reference">
+                            Mwanzo 12:1–9; Mwanzo 15:1–6
+                        </span>
+
+                        <p>
+                            Mungu alimwita Abramu aondoke katika nchi yake
+                            na kwenda mahali ambapo angemwonyesha. Mungu
+                            alimwahidi kwamba atakuwa taifa kubwa na kwamba
+                            kupitia kwake mataifa yatabarikiwa.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Ibrahimu anaonyesha umuhimu wa imani na
+                                kumtumaini Mungu hata wakati hatujui kila
+                                kitu kuhusu hatua inayofuata.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuwe na imani, uvumilivu na moyo wa kufuata
+                                yaliyo sawa tunapofanya maamuzi.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 5 -->
+                <div class="col-lg-6" id="somo5">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 05</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85"
+                            alt="Milima na ziwa katika mazingira tulivu">
+
+                        <h2>Yusufu: Uvumilivu na Msamaha</h2>
+
+                        <span class="lesson-reference">
+                            Mwanzo 37; Mwanzo 39–45; Mwanzo 50:15–21
+                        </span>
+
+                        <p>
+                            Yusufu alitendewa vibaya na ndugu zake na
+                            kupelekwa Misri. Alipitia changamoto nyingi,
+                            lakini baadaye akawa kiongozi mwenye mamlaka.
+                            Alipokutana tena na ndugu zake, aliweza
+                            kuwapa chakula na kuzungumza nao kuhusu
+                            msamaha na mpango wa Mungu.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Hadithi ya Yusufu inatukumbusha kuhusu
+                                uvumilivu, uaminifu na uwezekano wa
+                                kusamehe baada ya kutendewa vibaya.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tusiruhusu chuki itawale mioyo yetu.
+                                Tutafute njia salama na za hekima za
+                                kusuluhisha migogoro.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 6 -->
+                <div class="col-lg-6" id="somo6">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 06</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85"
+                            alt="Mandhari ya milima na maji">
+
+                        <h2>Musa na Kutoka Misri</h2>
+
+                        <span class="lesson-reference">
+                            Kutoka 3:1–14; Kutoka 12–14
+                        </span>
+
+                        <p>
+                            Musa aliitwa na Mungu ili awaongoze Waisraeli
+                            kutoka utumwani Misri. Kitabu cha Kutoka
+                            kinaeleza mapambano ya kuondoka Misri na
+                            kuvuka Bahari ya Shamu.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Simulizi hili linazungumzia ukombozi,
+                                uongozi, ujasiri na kumtegemea Mungu
+                                katika hali ngumu.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuwatendee wengine kwa haki na tuwe tayari
+                                kutumia uwezo wetu kusaidia watu walio katika
+                                hali ngumu.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 7 -->
+                <div class="col-lg-6" id="somo7">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 07</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85"
+                            alt="Mlima chini ya anga lenye nyota">
+
+                        <h2>Daudi na Goliathi</h2>
+
+                        <span class="lesson-reference">
+                            1 Samweli 17:1–50
+                        </span>
+
+                        <p>
+                            Goliathi aliwatisha askari wa Israeli. Daudi,
+                            kijana mchungaji, alikubali kukabiliana naye
+                            akitumaini msaada wa Mungu. Simulizi linaeleza
+                            jinsi Daudi alivyomshinda Goliathi.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Ujasiri haupimwi kwa ukubwa wa mwili.
+                                Imani, maandalizi na kutumia vizuri
+                                uwezo tulio nao ni muhimu.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tunapokabili changamoto, tujitayarishe,
+                                tutafute ushauri mzuri na tusikate tamaa
+                                haraka.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 8 -->
+                <div class="col-lg-6" id="somo8">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 08</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85"
+                            alt="Mwanga wa asubuhi juu ya ardhi">
+
+                        <h2>Eliya na Mungu wa Kweli</h2>
+
+                        <span class="lesson-reference">
+                            1 Wafalme 18:17–39
+                        </span>
+
+                        <p>
+                            Eliya aliwakabili manabii wa Baali katika
+                            Mlima Karmeli. Simulizi linaeleza jinsi watu
+                            walivyoalikwa kuamua kumfuata Mungu wa kweli
+                            badala ya kuyumba kati ya njia mbili.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Simulizi hili linahimiza uaminifu kwa Mungu
+                                na kuchunguza misingi ya imani yetu.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuwe na msimamo katika yaliyo mema, na
+                                tuchunguze mafundisho kwa kuyalinganisha
+                                na Neno la Mungu.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 9 -->
+                <div class="col-lg-6" id="somo9">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 09</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+                            alt="Mandhari yenye mwanga wa jua">
+
+                        <h2>Esta: Ujasiri wa Kusaidia Wengine</h2>
+
+                        <span class="lesson-reference">
+                            Esta 4:10–17; Esta 7:1–6
+                        </span>
+
+                        <p>
+                            Esta alikuwa malkia wakati ambapo Wayahudi
+                            walikabili hatari. Mordekai alimkumbusha kwamba
+                            huenda alikuwa amefika katika nafasi yake
+                            kwa ajili ya wakati huo. Esta alichukua hatua
+                            ya ujasiri ili kutetea watu wake.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Ujasiri unaweza kutumiwa kutetea haki
+                                na kuwasaidia watu walio katika hatari.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuseme ukweli kwa hekima, tutetee walioonewa
+                                na tutumie nafasi zetu kusaidia wengine.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- SOMO 10 -->
+                <div class="col-lg-6" id="somo10">
+                    <article class="lesson-detail">
+
+                        <span class="lesson-label">SOMO LA 10</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
+                            alt="Milima mirefu chini ya anga">
+
+                        <h2>Danieli na Tundu la Simba</h2>
+
+                        <span class="lesson-reference">
+                            Danieli 6:1–28
+                        </span>
+
+                        <p>
+                            Danieli aliendelea kumwomba Mungu hata baada
+                            ya kutolewa amri iliyopinga desturi yake ya
+                            maombi. Alitupwa katika tundu la simba,
+                            lakini simulizi linaeleza kwamba Mungu
+                            alimlinda.
+                        </p>
+
+                        <div class="lesson">
+                            <strong>Funzo kuu:</strong>
+                            <p>
+                                Danieli anaonyesha umuhimu wa uaminifu,
+                                nidhamu ya kiroho na kumtumaini Mungu
+                                katika hali ngumu.
+                            </p>
+                        </div>
+
+                        <div class="lesson">
+                            <strong>Matumizi katika maisha:</strong>
+                            <p>
+                                Tuwe waaminifu katika maadili yetu,
+                                tuendelee kuomba na tutafute msaada wa
+                                watu tunaowaamini tunapokabili matatizo.
+                            </p>
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JINSI YA KUJIFUNZA -->
+    <section class="py-5" style="background-color: #f7f8f4;">
+        <div class="container">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Jinsi ya kujifunza kila somo</h2>
+                <p class="text-muted">
+                    Fuata hatua hizi unapojifunza Biblia binafsi au katika kikundi.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="icon-box">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h3>1. Soma</h3>
+                        <p>
+                            Fungua Biblia na usome kifungu kilichoonyeshwa
+                            kwa makini. Usisome sentensi moja pekee bila
+                            kuelewa muktadha wake.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="icon-box">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>2. Tafakari</h3>
+                        <p>
+                            Jiulize hadithi inafundisha nini kuhusu Mungu,
+                            wanadamu, maamuzi na matokeo yake.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="icon-box">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>3. Tumia Funzo</h3>
+                        <p>
+                            Chagua jambo moja la kweli na jema unaloweza
+                            kutumia katika maisha yako ya kila siku.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MWITO WA KUENDELEA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="contact-banner text-center">
+
+                <h2 class="fw-bold">
+                    Tuendelee kujifunza Biblia
+                </h2>
+
+                <p class="mt-3">
+                    Agano Jipya linaeleza maisha na mafundisho ya Yesu Kristo,
+                    huduma ya mitume na ujumbe wa injili.
+                </p>
+
+                <a href="agano-jipya.html" class="btn btn-dark btn-lg mt-2">
+                    Endelea na Agano Jipya
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-5">
+                    <h4>
+                        <i class="bi bi-book-half text-warning"></i>
+                        APPRENDRE LA BIBLE
+                    </h4>
+
+                    <p>
+                        Jifunze Biblia kwa Kiswahili, mjue Yesu Kristo
+                        na tafakari Neno la Mungu kila siku.
+                    </p>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5>Viungo vya Haraka</h5>
+
+                    <ul class="footer-links">
+                        <li><a href="index.html">Mwanzo</a></li>
+                        <li><a href="agano-jipya.html">Agano Jipya</a></li>
+                        <li><a href="mifano-ya-imani.html">Mifano ya Imani</a></li>
+                        <li><a href="maisha-ya-yesu.html">Maisha ya Yesu</a></li>
+                        <li><a href="nitafute.html">Wasiliana Nami</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5>Mmiliki wa Tovuti</h5>
+
+                    <p>
+                        <i class="bi bi-person-fill"></i>
+                        HABIMANA PATRICK
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone-fill"></i>
+                        +256 726 350 631
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope-fill"></i>
+                        <a href="mailto:habimanapatrick125@gmail.com">
+                            habimanapatrick125@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Bon Voyage, Goma, DRC
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center py-3">
+                <p class="mb-1">
+                    &copy; <span id="currentYear"></span>
+                    APPRENDRE LA BIBLE. Haki zote zimehifadhiwa.
+                </p>
+
+                <p class="small mb-0">
+                    Imeandaliwa na HABIMANA PATRICK.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
