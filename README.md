@@ -1,9 +1,9 @@
 
-# 📖 APPRENDRE LA BIBLE
+# 📖 JIFUNZE NAMI BIBLIA
 
 ### Mradi wa Kujifunza Biblia kwa Kiswahili
 
-**APPRENDRE LA BIBLE** ni tovuti ya elimu ya Biblia inayolenga kuwasaidia watu kujifunza Maandiko Matakatifu, kuelewa mafundisho ya Biblia, kujifunza kutoka kwa watu wenye imani, na kutumia kanuni za Biblia katika maisha ya kila siku.
+**JIFUNZE NAMI BIBLIA** ni tovuti ya elimu ya Biblia inayolenga kuwasaidia watu kujifunza Maandiko Matakatifu, kuelewa mafundisho ya Biblia, kujifunza kutoka kwa watu wenye imani, na kutumia kanuni za Biblia katika maisha ya kila siku.
 
 Mradi huu umetengenezwa kwa kutumia HTML5, CSS3 na Bootstrap 5.
 
@@ -66,7 +66,7 @@ Mradi una kurasa zifuatazo:
 ## 📂 Muundo wa Mradi
 
 ```text
-APPRENDRE-LA-BIBLE/
+JIFUNZE-NAMI-BIBLIA/
 │
 ├── index.html
 ├── agano-la-kale.html
