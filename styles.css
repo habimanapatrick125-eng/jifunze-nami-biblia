@@ -1,14 +1,717 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Merriweather:wght@700&display=swap');
-:root{--primary:#0f3d2e;--gold:#d4a843;--light:#f8f5e9;--accent:#1a7a4c;}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--light);line-height:1.8}
-header{background:linear-gradient(135deg,var(--primary),var(--accent));color:white;padding:1.2rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
-.logo span{color:var(--gold)} nav{display:flex;gap:.6rem;flex-wrap:wrap} nav a{color:white;text-decoration:none;padding:.5rem .8rem;border-radius:30px;font-size:.82rem;font-weight:600} nav a:hover,nav a.active{background:var(--gold);color:var(--primary)}
-.hero{padding:4rem 5%;background:radial-gradient(circle at top right,#1a5d3f,#0f3d2e);color:white;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
-.profile-card{background:white;border-radius:20px;padding:2rem;box-shadow:0 20px 40px rgba(0,0,0,.2);color:#121212}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.lesson{background:white;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);border:1px solid #eee}
-.lesson img{width:100%;height:220px;object-fit:cover}.lesson-content{padding:1.5rem}
-.btn{display:inline-block;background:var(--gold);color:var(--primary);padding:.9rem 1.8rem;border-radius:40px;text-decoration:none;font-weight:700}
-.footer{background:var(--primary);color:white;padding:3rem 5%;text-align:center;margin-top:3rem}
-.map-box{width:100%;height:450px;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+/* =========================================
+   APPRENDRE LA BIBLE
+   CSS ya kisasa na inayobadilika kulingana
+   na ukubwa wa skrini
+========================================= */
+
+
+/* =========================================
+   1. VARIABLES ZA RANGI
+========================================= */
+
+:root {
+    --primary-color: #153b35;
+    --secondary-color: #245b4e;
+    --accent-color: #f2c14e;
+    --light-color: #f7f8f4;
+    --white-color: #ffffff;
+    --dark-color: #172522;
+    --text-color: #515b57;
+    --border-color: #e5e9e5;
+
+    --shadow-small: 0 5px 15px rgba(0, 0, 0, 0.07);
+    --shadow-medium: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    --transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   2. RESET YA UKURASA
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-color);
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding: 15px 0;
+    box-shadow: var(--shadow-small);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.4px;
+    color: var(--white-color) !important;
+}
+
+.navbar-brand i {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.navbar-nav {
+    gap: 3px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 9px 10px !important;
+    border-radius: 6px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-color) !important;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(242, 193, 78, 0.25);
+}
+
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+
+.hero-section {
+    position: relative;
+    padding: 100px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(21, 59, 53, 0.98),
+            rgba(36, 91, 78, 0.92)
+        );
+    color: var(--white-color);
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: -150px;
+    right: -100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    color: var(--white-color);
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-section h1 .text-warning {
+    color: var(--accent-color) !important;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-section .badge {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    white-space: normal;
+}
+
+.hero-section .lead {
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.hero-section .btn {
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 12px 22px;
+    transition: var(--transition);
+}
+
+.hero-section .btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.hero-section .btn-warning:hover {
+    background-color: #ffda70;
+    border-color: #ffda70;
+    transform: translateY(-3px);
+}
+
+.hero-section .btn-outline-light:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.hero-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* =========================================
+   5. VICHWA VYA SEHEMU
+========================================= */
+
+.section-heading {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    font-size: 1.05rem;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   6. KADI ZA FAIDA ZA KUSOMA BIBLIA
+========================================= */
+
+.info-card {
+    padding: 35px 28px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: var(--shadow-small);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background-color: #edf5ef;
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.info-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 0.97rem;
+}
+
+.bible-reference {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   7. SEHEMU YA WAADVENTISTA
+========================================= */
+
+.adventist-section {
+    background-color: var(--light-color);
+}
+
+.adventist-section img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.adventist-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.adventist-section p {
+    line-height: 1.9;
+}
+
+.check-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+}
+
+.check-list i {
+    color: var(--secondary-color);
+    font-size: 1.15rem;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   8. KADI ZA MASOMO YA BIBLIA
+========================================= */
+
+.lesson-card {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+    transition: var(--transition);
+}
+
+.lesson-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.lesson-image {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.lesson-card:hover .lesson-image {
+    transform: scale(1.04);
+}
+
+.lesson-content {
+    padding: 27px;
+}
+
+.lesson-number {
+    display: inline-block;
+    padding: 5px 11px;
+    background-color: #edf5ef;
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.lesson-content h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 13px;
+}
+
+.lesson-content p {
+    font-size: 0.95rem;
+}
+
+.lesson-content .btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border-radius: 7px;
+    font-weight: 700;
+}
+
+.lesson-content .btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+/* =========================================
+   9. SEHEMU YA WOKOVU
+========================================= */
+
+.salvation-section {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--secondary-color)
+        );
+    color: var(--white-color);
+}
+
+.salvation-section h2 {
+    color: var(--white-color);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.salvation-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.9;
+}
+
+.salvation-section .bible-reference {
+    color: var(--accent-color);
+}
+
+.salvation-icon {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+.salvation-section .btn-warning {
+    padding: 13px 25px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.salvation-section .btn-warning:hover {
+    background-color: #ffda70;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   10. BANNER YA KUWASILIANA
+========================================= */
+
+.contact-banner {
+    padding: 55px 35px;
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+.contact-banner h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.contact-banner p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-banner .btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.contact-banner .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.footer-section {
+    background-color: #102b26;
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 55px;
+}
+
+.footer-section h4,
+.footer-section h5 {
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 1.35rem;
+}
+
+.footer-section p {
+    font-size: 0.92rem;
+}
+
+.footer-section i {
+    margin-right: 7px;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    transform: translateX(4px);
+}
+
+.footer-section hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   12. BUTTONS ZA JUMLA
+========================================= */
+
+.btn {
+    transition: var(--transition);
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   13. TABLETS
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar-nav {
+        padding-top: 15px;
+    }
+
+    .navbar .nav-link {
+        padding: 10px 12px !important;
+    }
+
+    .hero-section {
+        padding: 75px 0;
+    }
+
+    .hero-image {
+        height: 380px;
+    }
+
+    .adventist-section img {
+        height: 380px;
+    }
+
+    .lesson-content {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================================
+   14. SIMU
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    body {
+        font-size: 0.96rem;
+    }
+
+    .hero-section {
+        padding: 55px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .info-card {
+        padding: 28px 23px;
+    }
+
+    .icon-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card {
+        text-align: center;
+    }
+
+    .adventist-section {
+        text-align: left;
+    }
+
+    .adventist-section img {
+        height: 300px;
+    }
+
+    .lesson-image {
+        height: 220px;
+    }
+
+    .contact-banner {
+        padding: 40px 22px;
+    }
+
+    .footer-section {
+        padding-top: 40px;
+    }
+
+}
+
+
+/* =========================================
+   15. SIMU NDOGO SANA
+========================================= */
+
+@media (max-width: 400px) {
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    .hero-image {
+        height: 240px;
+    }
+
+    .lesson-content {
+        padding: 20px;
+    }
+
+    .contact-banner {
+        padding: 30px 18px;
+    }
+
+}
+
+
+/* =========================================
+   16. KUPUNGUZA ANIMATION KWA WANAOHITAJI
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
