@@ -1,11 +1,627 @@
-<!DOCTYPE html><html lang="sw"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nitafute - Goma Bon Voyage</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><div class="logo">📖 APPRENDRE <span>LA BIBLE</span></div><nav><a href="index.html">Nyumbani</a><a href="agano-la-kale.html">Agano la Kale</a><a href="agano-jipya.html">Agano Jipya</a><a href="mifano-ya-imani.html">Mifano</a><a href="maonyo-biblia.html">Maonyo</a><a href="maisha-ya-yesu.html">Yesu</a><a href="maisha-ya-leo.html">Leo</a><a href="nitafute.html">Nitafute</a></nav></header>
-<section class="hero"><div><h1>Nitafute - <b>HABIMANA PATRICK</b></h1><p>Goma Bon Voyage RDC - Niko tayari kukufundisha Biblia</p></div><div class="profile-card"><h3>Mawasiliano</h3><p>📍 Bon Voyage, Goma RDC<br>📞 +256 726350631<br>✉️ habimanapatrick125@gmail.com<br>⛪ SDA Goma</p><a href="tel:+256726350631" class="btn">Nipigie</a></div></section>
-<section class="section"><h2 class="section-title">Map - Goma Quartier Bon Voyage</h2>
-<div class="map-box">
-<iframe src="https://www.google.com/maps?q=-1.6777,29.2333&z=14&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
-</div>
-<p style="text-align:center;margin-top:1rem">Goma Bon Voyage, Nord-Kivu, RDC - Entre Himbi et Katindo, proche Route Sake</p>
+
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nitafute | APPRENDRE LA BIBLE</title>
+
+    <meta name="description"
+          content="Wasiliana na HABIMANA PATRICK kuhusu mradi wa kujifunza Biblia kwa Kiswahili.">
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #155d3b;
+            --dark-green: #103d2a;
+            --gold: #d6a83d;
+            --light: #f4f8f5;
+        }
+
+        body {
+            background: var(--light);
+            color: #24332a;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, #103d2a, #208052);
+            color: white;
+            padding: 75px 20px;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+        }
+
+        .contact-hero p {
+            max-width: 700px;
+            margin: 18px auto 0;
+            line-height: 1.8;
+        }
+
+        .gold-line {
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .contact-card {
+            height: 100%;
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+            border: 1px solid #e5eee7;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #e4f2e8;
+            color: var(--green);
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-card a {
+            color: var(--green);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            color: var(--dark-green);
+            font-weight: 800;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 12px;
+            border-radius: 9px;
+        }
+
+        .form-control:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 0.2rem rgba(21, 93, 59, 0.12);
+        }
+
+        .btn-bible {
+            background: var(--green);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 9px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .btn-bible:hover {
+            background: var(--dark-green);
+            color: white;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 16px;
+        }
+
+        .bible-verse {
+            background: #e7f2e9;
+            border-left: 5px solid var(--gold);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .site-footer {
+            background: #103d2a;
+            color: white;
+            padding: 35px 15px;
+            text-align: center;
+        }
+
+        .site-footer a {
+            color: #f1d17b;
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero {
+                padding: 55px 15px;
+            }
+
+            .contact-form,
+            .contact-card {
+                padding: 22px;
+            }
+
+            .map-frame {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark"
+     style="background-color: #103d2a;">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-book-half text-warning"></i>
+            APPRENDRE LA BIBLE
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Fungua menyu">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Mwanzo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="agano-la-kale.html">
+                        Agano la Kale
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="agano-jipya.html">
+                        Agano Jipya
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="mifano-ya-imani.html">
+                        Mifano ya Imani
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="maonyo-biblia.html">
+                        Maonyo ya Biblia
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="maisha-ya-yesu.html">
+                        Maisha ya Yesu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="maisha-ya-leo.html">
+                        Maisha ya Leo
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                       href="nitafute.html">
+                        Nitafute
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="contact-hero">
+
+    <div class="container">
+
+        <i class="bi bi-envelope-paper-heart"
+           style="font-size: 3.5rem; color: #f1d17b;"></i>
+
+        <h1 class="mt-3">Wasiliana Nami</h1>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Karibu katika ukurasa wa mawasiliano wa APPRENDRE LA BIBLE.
+            Unaweza kuwasiliana nami kuhusu masomo ya Biblia,
+            maswali ya kiroho, mapendekezo na maendeleo ya mradi huu.
+        </p>
+
+    </div>
+</header>
+
+<!-- CONTACT DETAILS -->
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2 class="section-title">Maelezo ya Mawasiliano</h2>
+        <p class="text-muted">
+            Tumia njia mojawapo hapa chini kuwasiliana nami.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+
+                <h3>Mwandishi wa Mradi</h3>
+
+                <p class="mb-2">
+                    <strong>HABIMANA PATRICK</strong>
+                </p>
+
+                <p class="text-muted mb-0">
+                    Mwanafunzi wa Software Engineering na mtengenezaji
+                    wa mradi wa kujifunza Biblia kwa Kiswahili.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="bi bi-envelope"></i>
+                </div>
+
+                <h3>Barua Pepe</h3>
+
+                <p class="text-muted">
+                    Unaweza kunitumia barua pepe kwa mawasiliano.
+                </p>
+
+                <a href="mailto:habimanapatrick125@gmail.com">
+                    habimanapatrick125@gmail.com
+                </a>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="bi bi-telephone"></i>
+                </div>
+
+                <h3>Simu</h3>
+
+                <p class="text-muted">
+                    Bonyeza kiungo hapa chini ikiwa unatumia simu
+                    inayoweza kupiga simu.
+                </p>
+
+                <a href="tel:+256726350631">
+                    +256 726 350 631
+                </a>
+
+            </div>
+        </div>
+
+    </div>
 </section>
-<div class="footer"><h3>APPRENDRE LA BIBLE - HABIMANA PATRICK Goma Bon Voyage +256726350631</h3></div>
-</body></html>
+
+<!-- CONTACT FORM -->
+<section class="container py-4">
+
+    <div class="row g-4 align-items-start">
+
+        <div class="col-lg-5">
+
+            <h2 class="section-title mb-3">
+                Tuma Ujumbe
+            </h2>
+
+            <p class="text-muted" style="line-height: 1.9;">
+                Una swali kuhusu somo fulani la Biblia?
+                Unataka kupendekeza somo jipya au kutoa maoni
+                kuhusu tovuti? Tumia fomu iliyo hapa.
+            </p>
+
+            <div class="bible-verse mt-4">
+
+                <i class="bi bi-book-half fs-3"
+                   style="color: #155d3b;"></i>
+
+                <p class="mt-3 mb-2">
+                    “Neno lako ni taa ya miguu yangu,
+                    na mwanga wa njia yangu.”
+                </p>
+
+                <strong>Zaburi 119:105</strong>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-7">
+
+            <div class="contact-form">
+
+                <form id="contactForm">
+
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">
+                            Jina lako
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="fullName"
+                               name="fullName"
+                               placeholder="Andika jina lako"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            Barua pepe yako
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="mfano@email.com"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">
+                            Mada ya ujumbe
+                        </label>
+
+                        <select class="form-select"
+                                id="subject"
+                                name="subject"
+                                required>
+
+                            <option value="">Chagua mada</option>
+                            <option value="Swali la Biblia">Swali la Biblia</option>
+                            <option value="Pendekezo">Pendekezo</option>
+                            <option value="Maoni kuhusu tovuti">
+                                Maoni kuhusu tovuti
+                            </option>
+                            <option value="Mengineyo">Mengineyo</option>
+
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            Ujumbe wako
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="message"
+                                  name="message"
+                                  rows="5"
+                                  placeholder="Andika ujumbe wako hapa..."
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-bible w-100">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        Andaa Barua Pepe
+                    </button>
+
+                    <p class="small text-muted mt-3 mb-0">
+                        Kitufe hiki kitafungua programu yako ya barua pepe.
+                        Utahitaji kukagua na kutuma ujumbe humo.
+                    </p>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MAP -->
+<section class="container py-5">
+
+    <div class="text-center mb-4">
+
+        <h2 class="section-title">Eneo la Jumla</h2>
+
+        <p class="text-muted">
+            Goma, Jamhuri ya Kidemokrasia ya Kongo (DRC).
+        </p>
+
+    </div>
+
+    <div class="contact-card">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+            <div class="contact-icon mb-0">
+                <i class="bi bi-geo-alt-fill"></i>
+            </div>
+
+            <div>
+                <h3 class="mb-1">Goma, DRC</h3>
+                <p class="text-muted mb-0">
+                    Ramani inaonyesha eneo la jumla tu,
+                    si anwani binafsi.
+                </p>
+            </div>
+
+        </div>
+
+        <iframe
+            class="map-frame"
+            src="https://maps.google.com/maps?q=Goma%2C%20Democratic%20Republic%20of%20the%20Congo&t=&z=12&ie=UTF8&iwloc=&output=embed"
+            title="Ramani ya eneo la Goma"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+        </iframe>
+
+        <p class="mt-3 mb-0">
+            <a href="https://www.google.com/maps/search/?api=1&query=Goma%2C+Democratic+Republic+of+the+Congo"
+               target="_blank"
+               rel="noopener noreferrer">
+                Fungua ramani katika Google Maps
+                <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+        </p>
+
+    </div>
+</section>
+
+<!-- FINAL MESSAGE -->
+<section class="container pb-5">
+
+    <div class="bible-verse text-center">
+
+        <h3 class="section-title">Tuendelee Kujifunza Neno la Mungu</h3>
+
+        <p class="mt-3 mb-3">
+            Lengo la mradi huu ni kusaidia watu kujifunza Biblia,
+            kuelewa mafundisho yake, na kutumia kanuni zake katika
+            maisha ya kila siku.
+        </p>
+
+        <a href="index.html" class="btn btn-bible">
+            <i class="bi bi-house-door me-2"></i>
+            Rudi Mwanzo
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <i class="bi bi-book-half fs-2 text-warning"></i>
+
+        <h4 class="mt-2">APPRENDRE LA BIBLE</h4>
+
+        <p>
+            Kujifunza Biblia kwa Kiswahili,
+            kukuza imani na kuishi kulingana na Neno la Mungu.
+        </p>
+
+        <p class="mb-2">
+            Imetengenezwa na <strong>HABIMANA PATRICK</strong>
+        </p>
+
+        <p class="small mb-2">
+            <a href="mailto:habimanapatrick125@gmail.com">
+                habimanapatrick125@gmail.com
+            </a>
+        </p>
+
+        <hr class="border-light opacity-25">
+
+        <p class="small mb-0">
+            &copy; <span id="currentYear"></span>
+            APPRENDRE LA BIBLE. Haki zote zimehifadhiwa.
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !subject || !message) {
+            alert("Tafadhali jaza sehemu zote za fomu.");
+            return;
+        }
+
+        const recipient = "habimanapatrick125@gmail.com";
+        const emailSubject = encodeURIComponent(subject + " - " + name);
+        const emailBody = encodeURIComponent(
+            "Jina: " + name +
+            "\nBarua pepe: " + email +
+            "\nMada: " + subject +
+            "\n\nUjumbe:\n" + message
+        );
+
+        window.location.href =
+            "mailto:" + recipient +
+            "?subject=" + emailSubject +
+            "&body=" + emailBody;
+    });
+</script>
+
+</body>
+</html>
