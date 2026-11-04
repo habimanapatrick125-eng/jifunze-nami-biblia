@@ -213,10 +213,21 @@ p {
 
 .hero-image-wrapper {
     position: relative;
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.06);
+    padding: 12px;[cite: 16]
+    border: 1px solid rgba(255, 255, 255, 0.2);[cite: 16]
+    border-radius: 25px;[cite: 16]
+    
+    
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(16, 61, 42, 0.85),
+            rgba(32, 128, 82, 0.85)
+        ),
+        url('kanisa.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-image {
@@ -505,7 +516,17 @@ p {
 ========================================= */
 
 .footer-section {
-    background-color: #102b26;
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(16, 61, 42, 0.90),
+            rgba(32, 128, 82, 0.90)
+        ),
+        url('profil.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
     color: rgba(255, 255, 255, 0.8);
     padding-top: 55px;
 }
